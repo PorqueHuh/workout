@@ -1,11 +1,12 @@
 package com.porquehuh.workout.domain;
 
-import java.util.Set;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
@@ -19,16 +20,23 @@ import lombok.Setter;
 @JsonIdentityInfo(
 		  generator = ObjectIdGenerators.PropertyGenerator.class, 
 		  property = "id")
-public class Equipment {
+public class Excercise {
 	
 	@Id
 	@GeneratedValue
-	private Long id;
+	@Column(name="excercise_id")
+	private long id;
 	
 	private String name;
 	
-	@OneToMany(mappedBy = "equipment")
-	private Set<Excercise> excersice;
-			
+	private String description;
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="equipment_id")
+	private Equipment equipment;
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="muscle_id")
+	private Muscle muscle;
 
 }
