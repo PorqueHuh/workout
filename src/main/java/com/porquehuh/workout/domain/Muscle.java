@@ -19,7 +19,7 @@ import lombok.Setter;
 @JsonIdentityInfo(
 		  generator = ObjectIdGenerators.PropertyGenerator.class, 
 		  property = "id")
-public class Equipment {
+public class Muscle {
 	
 	@Id
 	@GeneratedValue
@@ -29,6 +29,5 @@ public class Equipment {
 	
 	@OneToMany(mappedBy = "equipment")
 	private Set<Excercise> excersice;
-			
 
 }
