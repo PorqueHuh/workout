@@ -28,6 +28,6 @@ public class Muscle {
 	private String name;
 	
 	@OneToMany(mappedBy = "equipment")
-	private Set<Excercise> excersice;
+	private Set<Excercise> exercise;
 
 }
