@@ -9,7 +9,7 @@ INSERT INTO MUSCLE (id, name) VALUES
 	
 	
 INSERT INTO EQUIPMENT (id, name) VALUES
-	(1, 'Barbel'),
+	(1, 'Barbell'),
 	(2, 'Dumbell'),
 	(3, 'Kettlebell'),
 	(4, 'Pull-up bar'),
@@ -23,3 +23,7 @@ INSERT INTO EXCERCISE_CATEGORY (id, category_name) VALUES
 	(5, 'Chest'),
 	(6, 'Legs'),
 	(7, 'Shoulders');
+	
+	
+--INSERT INTO EXCERCISE (excercise_id, name, description, equipment_id, muscle_id) VALUES
+--	(1, 'Bicep curls with barbel', 'Stand tall', 1, 2);

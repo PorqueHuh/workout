@@ -21,4 +21,9 @@ public class EquipmentService {
 		return equipments;
 	}
 
+	public Equipment findByName(String name) {
+		Equipment equipment = equipmentRepository.findByName(name);
+		return equipment;
+	}
+	
 }

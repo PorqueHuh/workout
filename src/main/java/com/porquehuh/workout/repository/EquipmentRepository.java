@@ -7,5 +7,7 @@ import com.porquehuh.workout.domain.Equipment;
 
 @Repository
 public interface EquipmentRepository extends CrudRepository<Equipment, Long>{
+	
+	Equipment findByName(String name);
 
 }

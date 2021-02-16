@@ -9,6 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import lombok.Getter;
@@ -29,14 +30,17 @@ public class Excercise {
 	
 	private String name;
 	
+	@Column(length=400)
 	private String description;
 	
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="equipment_id")
-	private Equipment equipment;
-	
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="muscle_id")
-	private Muscle muscle;
+//	@ManyToOne(fetch=FetchType.LAZY)
+//	@JoinColumn(name="equipment_id")
+//	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+//	private Equipment equipment;
+//	
+//	@ManyToOne(fetch=FetchType.LAZY)
+//	@JoinColumn(name="muscle_id")
+//	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+//	private Muscle muscle;
 
 }

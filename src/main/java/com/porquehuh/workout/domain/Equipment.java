@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import lombok.Getter;
@@ -27,8 +28,9 @@ public class Equipment {
 	
 	private String name;
 	
-	@OneToMany(mappedBy = "equipment")
-	private Set<Excercise> exercise;
+	//@OneToMany(mappedBy = "equipment")
+	//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+	//private Set<Excercise> exercise;
 			
 
 }
