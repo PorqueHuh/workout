@@ -25,5 +25,9 @@ public class MuscleService {
 		Muscle muscle = muscleRepository.findByName(name);
 		return muscle;
 	}
+	
+	public Muscle save(Muscle muscle) {
+		return muscleRepository.save(muscle);
+	}
 
 }
