@@ -26,4 +26,8 @@ public class EquipmentService {
 		return equipment;
 	}
 	
+	public Equipment save(Equipment equipment) {
+		return equipmentRepository.save(equipment);
+	}
+	
 }
