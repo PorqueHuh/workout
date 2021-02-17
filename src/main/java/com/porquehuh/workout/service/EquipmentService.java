@@ -20,6 +20,10 @@ public class EquipmentService {
 		equipmentRepository.findAll().forEach(equipments::add);
 		return equipments;
 	}
+	
+	public Equipment findById(Long id) {
+		return equipmentRepository.findById(id).get();
+	}
 
 	public Equipment findByName(String name) {
 		Equipment equipment = equipmentRepository.findByName(name);
@@ -29,5 +33,14 @@ public class EquipmentService {
 	public Equipment save(Equipment equipment) {
 		return equipmentRepository.save(equipment);
 	}
+	
+	public void deleteById(Long id) {
+		equipmentRepository.deleteById(id);
+	}
+	
+	public boolean isEquipmentExists(Long id) {
+		return equipmentRepository.existsById(id);
+	}
+	
 	
 }

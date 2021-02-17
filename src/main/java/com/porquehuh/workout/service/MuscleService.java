@@ -20,6 +20,9 @@ public class MuscleService {
 		return muscles;
 	}
 	
+	public Muscle findById(Long id) {
+		return muscleRepository.findById(id).get();
+	}
 	
 	public Muscle findByName(String name) {
 		Muscle muscle = muscleRepository.findByName(name);
@@ -28,6 +31,14 @@ public class MuscleService {
 	
 	public Muscle save(Muscle muscle) {
 		return muscleRepository.save(muscle);
+	}
+	
+	public void deleteById(Long id) {
+		muscleRepository.deleteById(id);
+	}
+	
+	public boolean isMuscleExists(Long id) {
+		return muscleRepository.existsById(id);
 	}
 
 }
