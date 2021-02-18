@@ -16,11 +16,14 @@ public interface MuscleMapper {
 	MuscleMapper INSTANCE =  Mappers.getMapper( MuscleMapper.class );
 	
 	@Mappings({
-		@Mapping(source = "name", target = "name")
+		@Mapping(source = "name" , target = "name")
 	})
 	List<MuscleDTO> musclesToMusclesDtos(List<Muscle> muscles);
 	
-	@Mapping(source = "name", target = "name")
+	@Mapping(source = "name" , target = "name")
 	MuscleDTO muscleToMuscleDto(Muscle muscle);
+	
+	@Mapping(source = "name" , target = "name")
+	Muscle muscleDtoToMuscle(MuscleDTO muscleDto);
 
 }

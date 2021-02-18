@@ -23,4 +23,7 @@ public interface EquipmentMapper {
 	@Mapping(source="name" , target="name")
 	EquipmentDTO equipmentToEquipmentDto(Equipment equipment);
 	
+	@Mapping(source="name" , target="name")
+	Equipment equipmentDtoToEquipment(EquipmentDTO equipmentDto);
+	
 }
