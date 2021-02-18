@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
@@ -35,6 +36,7 @@ public class Excercise {
 	
 //	@ManyToOne(fetch=FetchType.LAZY)
 //	@JoinColumn(name="equipment_id")
+//	@JsonBackReference
 //	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 //	private Equipment equipment;
 //	
