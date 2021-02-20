@@ -1,6 +1,6 @@
 package com.porquehuh.workout.domain;
 
-import java.util.Set;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -32,9 +32,9 @@ public class Equipment {
 	
 	private String name;
 	
-//	@OneToMany(mappedBy = "equipment" , targetEntity = Excercise.class, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-//	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-//	private Set<Excercise> exercise;
+	@OneToMany(mappedBy = "equipment" , targetEntity = Excercise.class, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+	private List<Excercise> exercise;
 			
 
 }
