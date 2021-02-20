@@ -1,10 +1,16 @@
 package com.porquehuh.workout.domain;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import lombok.Getter;
@@ -26,8 +32,8 @@ public class Muscle {
 
 	private String name;
 
-	// @OneToMany(mappedBy = "muscle")
-	// @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-	// private Set<Excercise> exercise;
+	 @OneToMany(cascade = CascadeType.ALL, mappedBy = "muscle", fetch = FetchType.EAGER)
+	 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+	 private List<Excercise> exercise;
 
 }

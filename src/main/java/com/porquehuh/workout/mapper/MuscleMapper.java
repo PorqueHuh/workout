@@ -10,13 +10,13 @@ import org.mapstruct.factory.Mappers;
 import com.porquehuh.workout.domain.Muscle;
 import com.porquehuh.workout.dto.MuscleDTO;
 
-@Mapper(componentModel="spring")
+@Mapper(uses={ExcerciseMapper.class} , componentModel="spring")
 public interface MuscleMapper {
 	
 	MuscleMapper INSTANCE =  Mappers.getMapper( MuscleMapper.class );
 	
 	@Mappings({
-		@Mapping(source = "name" , target = "name")
+		@Mapping(source="muscle.exercise", target="excercise"),
 	})
 	List<MuscleDTO> musclesToMusclesDtos(List<Muscle> muscles);
 	

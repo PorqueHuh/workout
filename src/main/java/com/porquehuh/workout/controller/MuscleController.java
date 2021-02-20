@@ -36,7 +36,7 @@ public class MuscleController {
 	@GetMapping
 	ResponseEntity<List<MuscleDTO>> all() {
 		
-		log.info("Muscle controller");		
+		log.info("Muscle controller");
 		try {
 			log.info("Fetching all muscles");	
 			return ResponseEntity.ok(muscleMapper.musclesToMusclesDtos(muscleService.findAll()));
@@ -60,7 +60,7 @@ public class MuscleController {
 		catch (MyResourceNotFoundException exc ) {
 			log.info("Failed to fetch muscle by name {}", name);	
 			throw new ResponseStatusException(
-					HttpStatus.NOT_FOUND, "all not found", exc);
+					HttpStatus.NOT_FOUND, "Not found", exc);
 		}
 		
 	}
@@ -82,7 +82,7 @@ public class MuscleController {
 		catch (MyResourceNotFoundException exc ) {
 			log.info("Failed to fetch muscle by name {}", muscleDto.toString());	
 			throw new ResponseStatusException(
-					HttpStatus.CONFLICT, "all not found", exc);
+					HttpStatus.CONFLICT, "Not created", exc);
 		}
 
 	}
