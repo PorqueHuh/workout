@@ -30,7 +30,7 @@ import com.porquehuh.workout.utils.MyResourceNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
-@RequestMapping("/excercise")
+@RequestMapping("/excercises")
 @Slf4j
 public class ExcerciseController {
 	
