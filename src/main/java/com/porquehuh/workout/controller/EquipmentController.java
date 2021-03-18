@@ -23,7 +23,7 @@ import com.porquehuh.workout.utils.MyResourceNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
-@RequestMapping("/equipment")
+@RequestMapping("/equipments")
 @Slf4j
 public class EquipmentController {
 	
