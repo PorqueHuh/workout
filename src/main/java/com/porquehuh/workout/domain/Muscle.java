@@ -23,7 +23,6 @@ import lombok.ToString;
 @Setter
 @NoArgsConstructor
 @ToString
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Muscle {
 
 	@Id
@@ -31,6 +30,12 @@ public class Muscle {
 	private Long id;
 
 	private String name;
+	
+	public Muscle(Long id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
+	}
 
 	 @OneToMany(cascade = CascadeType.ALL, mappedBy = "muscle", fetch = FetchType.EAGER)
 	 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})

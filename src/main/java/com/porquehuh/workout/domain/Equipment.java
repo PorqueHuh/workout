@@ -13,24 +13,28 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Getter @Setter @NoArgsConstructor
+@Getter @Setter @NoArgsConstructor @AllArgsConstructor
 @ToString
-@JsonIdentityInfo(
-		  generator = ObjectIdGenerators.PropertyGenerator.class, 
-		  property = "id")
 public class Equipment {
-	
+
 	@Id
 	@GeneratedValue
 	private Long id;
 	
 	private String name;
+	
+	public Equipment(Long id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
+	}
 	
 	@OneToMany(mappedBy = "equipment" , targetEntity = Excercise.class, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
