@@ -21,9 +21,6 @@ import lombok.Setter;
 @Entity
 @Getter @Setter @NoArgsConstructor   @AllArgsConstructor
 @Builder
-@JsonIdentityInfo(
-		  generator = ObjectIdGenerators.PropertyGenerator.class, 
-		  property = "id")
 public class Excercise {
 	
 	@Id
